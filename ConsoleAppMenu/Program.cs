@@ -30,7 +30,6 @@ namespace ConsoleAppMenu
             Console.WriteLine("=============Scegli cosa aggiungere al tuo ordine e alla fine stampa il conto e la conferma==============");
             do
             {
-               
                 for (int i = 0; i < menuList.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}: {menuList[i].ListaMenu()}");
@@ -50,16 +49,20 @@ namespace ConsoleAppMenu
                         Console.WriteLine("================================");
                         Console.WriteLine();
                     }
-                    
+                    else if (scelta != 11)
+                    {
+                        Console.WriteLine("Input non valido. Inserisci un numero tra 1 e 11.");
+                        Console.WriteLine();
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Input non valido. Inserisci un numero tra 1 e 11.");
+                    Console.WriteLine();
                 }
 
             }
             while (scelta != 11);
-
 
             Console.WriteLine("==============CONTO FINALE==============");
             Console.WriteLine("********IL TUO ORDINE*********");
@@ -74,8 +77,9 @@ namespace ConsoleAppMenu
             Console.WriteLine($"Servizio al tavolo: € {costoServizio:F2}");
             Console.WriteLine($"Totale: € {totale:F2}");
             Console.WriteLine("=======================================");
-            Console.WriteLine("GRAZIE.ABBIAMO RICEVUTO L'ORDINE IN CUCINA.");
+            Console.WriteLine("GRAZIE. ABBIAMO RICEVUTO L'ORDINE IN CUCINA.");
             Console.WriteLine("PER EFFETTUARE UN ALTRO ORDINE, RIAVVIARE L'APPLICAZIONE.");
         }
     }
+
 }
